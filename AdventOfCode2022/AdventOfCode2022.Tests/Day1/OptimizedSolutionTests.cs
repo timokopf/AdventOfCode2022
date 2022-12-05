@@ -1,16 +1,11 @@
 ﻿using AdventOfCode.Inputs;
 using AdventOfCode2022.Day1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode2022.Tests.Day1
 {
     internal class OptimizedSolutionTests
     {
-        private readonly string[] _input = Inputs.Day1;
+        private readonly string[] _input = Inputs.Instance.Day1;
 
         [Test]
         public void SolvePart1()

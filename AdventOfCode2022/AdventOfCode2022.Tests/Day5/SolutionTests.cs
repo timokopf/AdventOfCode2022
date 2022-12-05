@@ -5,7 +5,7 @@ namespace AdventOfCode2022.Tests.Day5
 {
     internal class SolutionTests
     {
-        private static readonly string[] _input = Inputs.Day5;
+        private static readonly string[] _input = Inputs.Instance.Day5;
         [Test]
         public void SolvePart1()
         {

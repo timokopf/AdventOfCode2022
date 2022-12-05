@@ -1,11 +1,37 @@
-﻿namespace AdventOfCode.Inputs
+﻿using System.Dynamic;
+
+namespace AdventOfCode.Inputs
 {
-    public static class Inputs
+    public class Inputs : DynamicObject
     {
-        public static readonly string[] Day1 = File.ReadAllLines("Day1Input.txt");
-        public static readonly string[] Day2 = File.ReadAllLines("Day2Input.txt");
-        public static readonly string[] Day3 = File.ReadAllLines("Day3Input.txt");
-        public static readonly string[] Day4 = File.ReadAllLines("Day4Input.txt");
-        public static readonly string[] Day5 = File.ReadAllLines("Day5Input.txt");
+        public static dynamic Instance = new Inputs();
+
+
+        private Dictionary<string, object> _inputs = new();
+        private Inputs() 
+        {
+        }
+
+        public override bool TryGetMember(GetMemberBinder binder, out object? result)
+        {
+            string name = binder.Name;
+
+            if (_inputs.TryGetValue(name, out result))
+            {
+                return true;
+            }
+
+            try
+            {
+                result = File.ReadAllLines($"{name}Input.txt");
+                _inputs[name] = result;
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

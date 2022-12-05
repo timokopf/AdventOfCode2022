@@ -5,7 +5,7 @@ namespace AdventOfCode2022.Tests.Day1
 {
     internal class NaiveSolutionTests
     {
-        private readonly string[] _input = Inputs.Day1;
+        private readonly string[] _input = Inputs.Instance.Day1;
 
         [Test]
         public void SolvePart1()

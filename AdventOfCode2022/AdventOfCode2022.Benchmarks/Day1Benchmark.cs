@@ -6,7 +6,7 @@ namespace AdventOfCode2022.Benchmarks
 {
     public class Day1Benchmark
     {
-        private readonly string[] _input = Inputs.Day1;
+        private readonly string[] _input = Inputs.Instance.Day1;
         private readonly NaiveSolution _naiveSolution = new();
         private readonly OptimizedSolution _optimizedSolution = new();
 
