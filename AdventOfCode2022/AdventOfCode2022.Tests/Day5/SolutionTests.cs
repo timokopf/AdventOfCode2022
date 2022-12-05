@@ -6,12 +6,21 @@ namespace AdventOfCode2022.Tests.Day5
     internal class SolutionTests
     {
         private static readonly string[] _input = Inputs.Instance.Day5;
+        
         [Test]
         public void SolvePart1()
         {
             string result = new Solution().SolvePart1(_input);
 
             Assert.That(result, Is.EqualTo("TDCHVHJTG"));
+        }
+
+        [Test]
+        public void SolvePart2()
+        {
+            string result = new Solution().SolvePart2(_input);
+
+            Assert.That(result, Is.EqualTo("NGCMPJLHV"));
         }
     }
 }
