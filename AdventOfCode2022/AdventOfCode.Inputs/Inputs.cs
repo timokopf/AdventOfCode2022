@@ -4,10 +4,10 @@ namespace AdventOfCode.Inputs
 {
     public class Inputs : DynamicObject
     {
+        private readonly Dictionary<string, object> _inputs = new();
+
         public static dynamic Instance = new Inputs();
 
-
-        private Dictionary<string, object> _inputs = new();
         private Inputs() 
         {
         }
@@ -23,7 +23,15 @@ namespace AdventOfCode.Inputs
 
             try
             {
-                result = File.ReadAllLines($"{name}Input.txt");
+                string[] fileContents = File.ReadAllLines($"{name}Input.txt");
+                if (fileContents.Length == 1)
+                {
+                    result = fileContents[0];
+                } else
+                {
+                    result = fileContents;
+                }
+
                 _inputs[name] = result;
 
                 return true;
